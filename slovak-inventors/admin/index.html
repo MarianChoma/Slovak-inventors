@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Admin</h1>
+</header>
+<div class="container">
+    <div class="delete">
+        <h2>Vymazanie</h2>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte ID vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="deleteId">
+        </div>
+        <div class="input-group">
+        <button class="btn btn-light" onclick="deleteRequest('https://site82.webte.fei.stuba.sk/Zadanie5/inventors/')">
+            Vymazať podľa Id
+        </button>
+        </div>
+    </div>
+
+    <div class="update">
+        <h2>Update</h2>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte ID vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="updateId">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte meno vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="updateName">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte priezvisko vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="updateSurname">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte miesto narodenie vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="updateBirthPlace">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte rok narodenia vynálezcu</span>
+            </div>
+            <input class="form-control" type="date" id="updateBirthDate">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte popis vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="updateDescription">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte rok úmrtia vynálezcuu</span>
+            </div>
+            <input class="form-control" type="date" id="updateDeathDate">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte miesto úmrtia vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="updateDeathPlace">
+        </div>
+        <div class="input-group">
+            <button class="btn btn-dark"
+                    onclick="updateRequest('https://site82.webte.fei.stuba.sk/Zadanie5/inventors/index.php')">Update
+            </button>
+        </div>
+    </div>
+
+
+    <div class="create">
+        <h2>Vytvorenie</h2>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte meno vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="newName">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte priezvisko vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="newSurname">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte miesto narodenia vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="newBirthPlace">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte rok narodenia vynálezcu</span>
+            </div>
+            <input class="form-control" type="date" id="newBirthDate">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte popis vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="newDescription">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte rok úmrtia vynálezcu</span>
+            </div>
+            <input class="form-control" type="date" id="newDeathDate">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte miesto úmrtia vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="newDeathPlace">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte rok vynájdenia vynálezu</span>
+            </div>
+            <input class="form-control" type="date" id="inventionDate">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte popis vynálezu</span>
+            </div>
+            <input class="form-control" type="text" id="inventionDescription">
+        </div>
+        <div class="input-group">
+            <button class="btn btn-light" onclick="postRequest('https://site82.webte.fei.stuba.sk/Zadanie5/inventors/index.php')">Vytvoriť
+            </button>
+        </div>
+    </div>
+    <div class="add">
+        <h2>Pridať vynález</h2>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte ID vynálezcu</span>
+            </div>
+            <input class="form-control" type="text" id="addId">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte popis vynálezu</span>
+            </div>
+            <input class="form-control" type="text" id="addDescription">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Zadajte rok vynájdenia vynálezu</span>
+            </div>
+            <input class="form-control" type="date" id="addDate">
+        </div>
+        <div class="input-group">
+            <button class="btn btn-dark" onclick="addInvention('https://site82.webte.fei.stuba.sk/Zadanie5/inventors/index.php')">pridať vynález
+            </button>
+        </div>
+        <div class="input-group">
+            <h3>Api dokumentácia: <a href="https://app.swaggerhub.com/apis-docs/MarianChoma/Zadanie5/1.0.0">Swagger</a></h3>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</div>
+</body>
+</html>
